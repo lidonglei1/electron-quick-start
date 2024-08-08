@@ -1,5 +1,7 @@
 # electron-quick-start
 
+240808解决无法执行二进制文件bug：https://docs.qq.com/doc/DU09OTFBpWkRReFpj
+
 **Clone and run for a quick way to see Electron in action.**
 
 This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/latest/tutorial/quick-start) within the Electron documentation.
