@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder"
-
+    "build": "electron-builder",
+    "build:linux": "env USE_SYSTEM_FPM=true electron-builder --linux "
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -22,28 +22,28 @@
     "electron": "21.4.4",
     "electron-builder": "^24.13.3"
   },
-  "build":{
+  "build": {
     "appId": "com.yourcompany.yourapp",
     "linux": {
       "target": [
         {
           "target": "deb",
           "arch": [
-            "arm64"     
+            "arm64"
           ]
         }
       ],
       "category": "Utility",
-      "maintainer": "lidonglei1@", 
+      "maintainer": "lidonglei1@",
       "desktop": {
         "Name": "Electron Quick Start",
         "GenericName": "Electron App",
         "Comment": "A minimal Electron application",
         "Terminal": false,
         "Type": "Application",
-        "Icon": "your-app-icon" 
+        "Icon": "your-app-icon",
+        "--afterInstall": "build/create_shGenFile.sh"
       }
     }
   }
-
 }
