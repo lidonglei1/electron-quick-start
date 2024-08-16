@@ -6,7 +6,8 @@
   "scripts": {
     "start": "electron .",
     "build": "env USE_SYSTEM_FPM=true electron-builder --linux ",
-    "build:delete": "rimraf ./dist && env USE_SYSTEM_FPM=true electron-builder --linux "
+    "build:delete": "rimraf ./dist && env USE_SYSTEM_FPM=true electron-builder --linux ",
+    "build:usebuildconfigjs": "rimraf ./dist && env USE_SYSTEM_FPM=true electron-builder --linux --config ./.build/build.config.js"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -21,31 +22,5 @@
   "devDependencies": {
     "electron": "21.4.4",
     "electron-builder": "^24.13.3"
-  },
-  "build":{
-    "appId": "com.yourcompany.yourapp",
-    "linux": {
-      "icon": ".build",
-      "target": [
-        {
-          "target": "deb",
-          "arch": [
-            "arm64"     
-          ]
-        }
-      ],
-      "category": "Utility",
-      "maintainer": "lidonglei1@", 
-      "desktop": {
-        "Name": "Electron Quick Start",
-        "GenericName": "Electron App",
-        "Comment": "A minimal Electron application",
-        "Terminal": false,
-        "Type": "Application",
-        "icon": ".build",
-        "afterInstall":".build/create_shGenFile.sh"
-      }
-    }
   }
-
 }
